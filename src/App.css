@@ -1,38 +1,150 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  padding: 20px 5%;
 }
 
-.App-link {
-  color: #61dafb;
+.card {
+  box-shadow: 2px 2px 15px #ddd;
+  width: 420px;
+  max-width: 100%;
+  padding: 10px;
+  transition: .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card .search-area {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  padding: 10px;
+}
+
+.card .search-area form {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  padding: 0px 5px;
+}
+
+.card .search-area form input {
+  padding: 5px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  caret-color: #888;
+  flex: 1;
+}
+
+.card .search-area form input::placeholder {
+  color: #999;
+}
+
+.card .search-area form svg {
+  width: 18px;
+  fill: #888;
+}
+
+.card .list-container {
+  padding: 5px 20px;
+  max-height: 350px;
+  overflow-y: scroll;
+}
+
+.card .list-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.card .list-container::-webkit-scrollbar-track {
+  border-radius: 50px;
+  background-color: #efeff0;
+}
+
+.card .list-container::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 50px;
+}
+
+.card .list-container .item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card .list-container .item .item-info {
+  display: flex;
+  align-items: center;
+}
+
+.card .list-container .item .item-info > div:not(:first-child) {
+  margin: 15px;
+}
+
+.card .list-container .item .item-info .handle {
+  cursor: move;
+}
+
+.card .list-container .item .item-info .handle svg {
+  color: #aaa;
+}
+
+.card .list-container .item .item-info .icon {
+  background-color: #f5f5f5;
+  padding: 7px 10px;
+  border-radius: 8px;
+}
+
+.card .list-container .item .item-action {
+  cursor: pointer;
+}
+
+.card .list-container .no-items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.card .list-container .no-items p {
+  font-size: 14px;
+  padding: 10px;
+  color: #555;
+}
+
+.card .list-container .no-items svg {
+  width: 24px;
+}
+
+.card .actions-container {
+  padding: 10px;
+  display: flex;
+  justify-content: flex-end;
+  transition: .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card .actions-container button {
+  padding: 8px 10px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 50px;
+  margin: 5px;
+}
+
+.card .actions-container button#cancel {
+  background-color: #fff;
+  border: 1px solid black;
+}
+
+.card .actions-container button#apply {
+  background-color: #000;
+  border: 1px solid black;
+  color: #fff;
+}
+
+.hide-actions {
+  display: none;
 }
